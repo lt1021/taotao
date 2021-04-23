@@ -1,0 +1,34 @@
+server:
+  port: 8082
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      location: E:\\temp
+      max-file-size: 1MB
+      max-request-size: 10MB
+      resolve-lazily: false
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/vhr
+    username: root
+    password:
+  redis:
+    database: 0
+    host: 192.168.66.130
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+  cache:
+    cache-names:
+    redis:
+      time-to-live: 1800s
+mybatis:
+  config-location: classpath:/mybatis-conifg.xml
